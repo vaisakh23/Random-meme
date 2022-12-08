@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for item in items %}
+    <center>
+        <div class="img-box">
+            <img class="meme-img" src="{{ item.img_url }}"><br><br>
+        </div>
+        <form action=" " method="post">
+            {% csrf_token %}
+            <input type="hidden" value="{{ item.id }}" name="id">
+            <input class="button" type="submit" value="Remove">
+        </form>
+    </center>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}?version=1">
+</head>
+
+<body style="margin: 0">
+    <ul class="nav">
+        <li class="nav-items active">
+            <a class="nav-link" href="{% url 'memes:home' %}">home</a>
+        </li>
+        <li class="nav-items">
+            <a class="nav-link" href="{% url 'memes:about' %}">about</a>
+        </li>
+        <li class="nav-items">
+            <a class="nav-link" href="{% url 'memes:meme_list' %}">meme list</a>
+        </li>
+    </ul>
+    <div class="page-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

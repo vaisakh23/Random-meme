@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center>
+    <div class="img-box">
+    <img class="meme-img" src="{{ meme }}"><br>
+    </div>
+    <a href="{% url 'memes:new_meme' %}">
+        <button class="button">New meme</button>
+    </a>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input class="button" type="submit" value="Save">
+    </form>
+    </center>
+{% endblock %}
